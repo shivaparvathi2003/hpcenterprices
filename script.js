@@ -1,9 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    const navLinks = document.querySelectorAll('.nav-links li');
+window.addEventListener('DOMContentLoaded', () => {
+    try {
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navLinks = document.querySelectorAll('.nav-links li');
 
-    if (burger && nav) {
+        if (!burger || !nav) {
+            console.error('Navigation elements not found');
+            return;
+        }
+
         burger.addEventListener('click', (e) => {
             e.stopPropagation();
             nav.classList.toggle('active');
@@ -27,22 +32,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    }
 
-    // Keep your existing gallery lightbox code
-    document.querySelectorAll('.gallery-item img').forEach(image => {
-        image.addEventListener('click', () => {
-            const lightbox = document.createElement('div');
-            lightbox.className = 'lightbox';
-            lightbox.innerHTML = `
-                <img src="${image.src}" alt="${image.alt}">
-                <span class="close">&times;</span>
-            `;
-            document.body.appendChild(lightbox);
-            
-            lightbox.querySelector('.close').addEventListener('click', () => {
-                lightbox.remove();
+        // Image gallery lightbox
+        document.querySelectorAll('.gallery-item img').forEach(image => {
+            image.addEventListener('click', () => {
+                const lightbox = document.createElement('div');
+                lightbox.className = 'lightbox';
+                lightbox.innerHTML = `
+                    <img src="${image.src}" alt="${image.alt}">
+                    <span class="close">&times;</span>
+                `;
+                document.body.appendChild(lightbox);
+                
+                lightbox.querySelector('.close').addEventListener('click', () => {
+                    lightbox.remove();
+                });
             });
         });
-    });
+    } catch (error) {
+        console.error('Error initializing navigation:', error);
+    }
 });
