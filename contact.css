@@ -83,7 +83,7 @@ button:hover {
     background: #444;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .contact-container {
         grid-template-columns: 1fr;
     }
