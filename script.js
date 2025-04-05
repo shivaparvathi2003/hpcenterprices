@@ -1,14 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Script loaded');
-    
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
     const navLinks = document.querySelectorAll('.nav-links li');
 
-    console.log('Burger:', burger);
-
     burger.addEventListener('click', () => {
-        console.log('Burger clicked');
         nav.classList.toggle('active');
         burger.classList.toggle('active');
         
@@ -25,6 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!e.target.closest('.navbar') && !e.target.closest('.burger')) {
             nav.classList.remove('active');
             burger.classList.remove('active');
+            navLinks.forEach(link => {
+                link.style.animation = '';
+            });
         }
+    });
+
+    // Image gallery lightbox
+    document.querySelectorAll('.gallery-item img').forEach(image => {
+        image.addEventListener('click', () => {
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <img src="${image.src}" alt="${image.alt}">
+                <span class="close">&times;</span>
+            `;
+            document.body.appendChild(lightbox);
+            
+            lightbox.querySelector('.close').addEventListener('click', () => {
+                lightbox.remove();
+            });
+        });
     });
 });
