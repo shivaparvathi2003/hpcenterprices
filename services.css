@@ -164,7 +164,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px){
     .service-item {
         grid-template-columns: 1fr;
     }
