@@ -85,7 +85,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .gallery-hero h1 {
         font-size: 2rem;
     }
