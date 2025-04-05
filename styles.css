@@ -346,38 +346,49 @@ footer {
     }
 }
 
+.burger {
+    display: none;
+}
+
 @media screen and (max-width: 768px) {
-    .nav-links {
-        position: fixed;
-        right: -100%;
-        top: 70px;
-        background: rgba(255, 255, 255, 0.95);
-        width: 100%;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 0;
-        transition: 0.3s ease-in-out;
-        display: flex;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
     .burger {
         display: block;
         cursor: pointer;
     }
 
-    .burger.active .line1 {
+    .burger div {
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background: #333;
+        transition: 0.3s;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        background: white;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .burger.open .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
 
-    .burger.active .line2 {
+    .burger.open .line2 {
         opacity: 0;
     }
 
-    .burger.active .line3 {
+    .burger.open .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+}
 }
