@@ -643,9 +643,25 @@ footer {
     }
     @media screen and (max-width: 480px) {
         .hero {
-            min-height: 100vh;
-            padding-top: 100px;
+            min-height: 60vh; /* Reduced from 100vh */
+            padding-top: 80px;
+            padding-bottom: 40px;
             height: auto;
+        }
+    
+        .hero h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+    
+        .hero p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+    
+        .cta-button {
+            padding: 12px 30px;
+            font-size: 0.9rem;
         }
     
         /* Fix hamburger menu for smaller screens */
