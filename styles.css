@@ -391,4 +391,90 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 }
+@media screen and (max-width: 480px) {
+    /* Main container */
+    main {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* All sections common styling */
+    section {
+        margin: 20px auto;
+        padding: 20px 15px;
+        width: 90%;
+    }
+
+    /* Hero section */
+    .hero {
+        height: auto;
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    /* About section */
+    .about-content {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Services section */
+    .services-grid {
+        width: 90%;
+        margin: 0 auto;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 15px;
+    }
+
+    /* Testimonials */
+    .testimonial-grid {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .testimonial-card {
+        margin-bottom: 20px;
+    }
+
+    /* Gallery preview */
+    .gallery-preview {
+        width: 90%;
+        margin: 0 auto;
+        gap: 15px;
+    }
+
+    /* Footer adjustments */
+    .footer-content {
+        width: 90%;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .footer-section {
+        margin-bottom: 20px;
+    }
+
+    /* Text adjustments */
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
 }
