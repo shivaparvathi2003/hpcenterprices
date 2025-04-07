@@ -58,15 +58,17 @@ body {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: scroll; /* Changed from fixed for better mobile compatibility */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    padding: 0 20px;
+    padding: 80px 20px; /* Added top padding to account for navbar */
+    margin-top: 0;
 }
+
 
 .hero h1 {
     font-size: 3.5rem;
@@ -638,6 +640,42 @@ footer {
     p {
         font-size: 0.9rem;
         line-height: 1.5;
+    }
+    @media screen and (max-width: 480px) {
+        .hero {
+            min-height: 100vh;
+            padding-top: 100px;
+            height: auto;
+        }
+    
+        /* Fix hamburger menu for smaller screens */
+        .nav-links {
+            position: fixed;
+            right: -100%;
+            top: 60px;
+            background: rgba(255, 255, 255, 0.95);
+            width: 100%;
+            height: calc(100vh - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+            transition: 0.3s ease-in-out;
+        }
+    
+        .nav-links.active {
+            right: 0;
+            display: flex;
+        }
+    
+        .nav-links li {
+            margin: 15px 0;
+            opacity: 1;
+        }
+    
+        .burger {
+            display: block;
+        }
     }
 }
 
